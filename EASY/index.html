@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="html" lang="en" dir="ltr" oncontextmenu="return false">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141418140-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-141418140-1');
+    </script>
+    <meta name="Description" content="Lol guess, Made by @DiiREKT">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>EASY LOL GUESSER</title>
+    <link rel="stylesheet" href="../assets/gamestyle.css">
+    <script type="text/javascript" src="../assets/champions.js"></script>
+    <script type="text/javascript" src="../assets/alias.js"></script>
+    <script type="text/javascript" src="js/easy.js"></script>
+    <script type="text/javascript" src="js/compare-strings.js"></script>
+    <link rel="icon" href="../assets/favicon.ico"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+  <body onload="printChamp()">
+    <div class="header">
+      <h1 id="title">EASY</h1>
+      <h3 id="subtitle">Guess the champion based on its 5 abilities.</h3>
+    </div>
+    <div class="scoreboard">
+      <h2 id="good">
+        <span id="goodAnswer">0</span> <i class="fas fa-check"></i>
+      </h2>
+      <h2 id="wrong">
+        <span id="wrongAnswer">0</span> <i class="fas fa-times"></i>
+      </h2>
+    </div>
+    <div class="mainContainer">
+      <img class="placeholders" id="placeholder_p" src="../assets/champion.png" width="64" height="64">
+      <img class="placeholders" id="placeholder_q" src="../assets/champion.png" width="64" height="64">
+      <img class="placeholders" id="placeholder_w" src="../assets/champion.png" width="64" height="64">
+      <img class="placeholders" id="placeholder_e" src="../assets/champion.png" width="64" height="64">
+      <img class="placeholders" id="placeholder_r" src="../assets/champion.png" width="64" height="64">
+      <br>
+      <br>
+      <input id="guess"/>
+    </div>
+    <div class="mainButton">
+      <button class="button" id="userButton" type="submit" onclick=validateGuess();document.getElementById("guess").value="";>GUESS</button>
+    </div>
+      <br>
+      <br>
+    <div class="mainYesorno">
+      <img id="yesno" style="opacity:0;" width="120" height="120" alt="yes or no">
+      <h1 id="goodOne"> </h1>
+    </div>
+    <div class="about">
+      <a href="../about.html"><h1 class="aboutTitle">About</h6></a>
+      <a href="https://twitter.com/diirekt"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/DiR3KT"><i class="fab fa-github"></i></a>
+    </div>
+  </body>
+  <script type="text/javascript">
+    document.getElementById("guess").onkeypress = function(event){
+      if (event.keyCode == 13 || event.which == 13){
+        validateGuess()
+        document.getElementById("guess").value="";
+      }
+    };
+    var inputBox = document.getElementById("guess");
+  </script>
+</html>
